@@ -19,25 +19,57 @@ const ContactSection = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus('sending');
     
-    // Simulate form submission
-    setTimeout(() => {
-      setStatus('success');
-      setFormData({ name: '', email: '', message: '' });
+    try {
+      // Using Web3Forms API to send email
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          access_key: 'YOUR_WEB3FORMS_ACCESS_KEY', // You need to get this from web3forms.com
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          subject: `Portfolio Contact: Message from ${formData.name}`,
+          from_name: 'Portfolio Website',
+          to_email: 'manishbraje@gmail.com'
+        })
+      });
+
+      const result = await response.json();
       
+      if (result.success) {
+        setStatus('success');
+        setFormData({ name: '', email: '', message: '' });
+        
+        setTimeout(() => {
+          setStatus('');
+        }, 5000);
+      } else {
+        setStatus('error');
+        setTimeout(() => {
+          setStatus('');
+        }, 5000);
+      }
+    } catch (error) {
+      console.error('Error sending message:', error);
+      setStatus('error');
       setTimeout(() => {
         setStatus('');
-      }, 3000);
-    }, 1500);
+      }, 5000);
+    }
   };
 
   const socialLinks = [
-    { name: 'github', url: 'https://github.com', label: 'GitHub' },
-    { name: 'linkedin', url: 'https://linkedin.com', label: 'LinkedIn' },
-    { name: 'email', url: 'mailto:your@email.com', label: 'Email' },
+    { name: 'github', url: 'https://github.com/manishraje28/', label: 'GitHub' },
+    { name: 'linkedin', url: 'https://www.linkedin.com/in/manishbraje/', label: 'LinkedIn' },
+    { name: 'email', url: 'mailto:manishbraje@gmail.com', label: 'Email' },
   ];
 
   return (
@@ -112,9 +144,19 @@ const ContactSection = () => {
                   <motion.div
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="text-terminal-text text-sm font-mono"
+                    className="text-terminal-success text-sm font-mono p-3 border border-terminal-success/30 bg-terminal-success/10"
                   >
-                    ✓ Message sent successfully!
+                    ✓ Message sent successfully! I'll get back to you soon.
+                  </motion.div>
+                )}
+
+                {status === 'error' && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="text-terminal-error text-sm font-mono p-3 border border-terminal-error/30 bg-terminal-error/10"
+                  >
+                    ✗ Failed to send message. Please try again or email directly.
                   </motion.div>
                 )}
 
@@ -161,7 +203,7 @@ const ContactSection = () => {
               <div className="terminal-window p-6">
                 <div className="space-y-2 font-mono text-sm">
                   <p className="text-terminal-text/60">$ location</p>
-                  <p className="text-terminal-text pl-4">→ Remote / Worldwide</p>
+                  <p className="text-terminal-text pl-4">→ Remote / Mumbai</p>
                   
                   <p className="text-terminal-text/60 mt-4">$ availability</p>
                   <p className="text-terminal-text pl-4">→ Open to opportunities</p>

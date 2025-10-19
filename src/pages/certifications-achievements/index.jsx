@@ -54,34 +54,34 @@ const CertificationsAchievements = () => {
   ];
 
   const achievements = [
-    {
-      title: 'Hackathon Winner 🏆',
-      event: 'Smart India Hackathon 2024',
-      description: 'Built an AI-powered voice assistant for government services',
-      impact: '10,000+ users',
-      icon: '🥇'
-    },
-    {
-      title: 'Open Source Contributor',
-      event: 'GitHub',
-      description: 'Contributed to 15+ open source projects with 200+ stars',
-      impact: 'Community Impact',
-      icon: '💻'
-    },
-    {
-      title: 'Tech Speaker',
-      event: 'College Tech Fest 2024',
-      description: 'Delivered talk on Modern Web Development and MERN Stack',
-      impact: '500+ attendees',
-      icon: '🎤'
-    },
-    {
-      title: 'CSI VESIT Active Member',
-      event: '2020 - Present',
-      description: 'Contributing to technical events, workshops, and student mentoring',
-      impact: 'Student Leadership',
-      icon: '🎓'
-    }
+    // {
+    //   title: 'Hackathon Winner 🏆',
+    //   event: 'Smart India Hackathon 2024',
+    //   description: 'Built an AI-powered voice assistant for government services',
+    //   impact: '10,000+ users',
+    //   icon: '🥇'
+    // },
+    // {
+    //   title: 'Open Source Contributor',
+    //   event: 'GitHub',
+    //   description: 'Contributed to 15+ open source projects with 200+ stars',
+    //   impact: 'Community Impact',
+    //   icon: '💻'
+    // },
+    // {
+    //   title: 'Tech Speaker',
+    //   event: 'College Tech Fest 2024',
+    //   description: 'Delivered talk on Modern Web Development and MERN Stack',
+    //   impact: '500+ attendees',
+    //   icon: '🎤'
+    // },
+    // {
+    //   title: 'CSI VESIT Active Member',
+    //   event: '2020 - Present',
+    //   description: 'Contributing to technical events, workshops, and student mentoring',
+    //   impact: 'Student Leadership',
+    //   icon: '🎓'
+    // }
   ];
 
   const categories = [
