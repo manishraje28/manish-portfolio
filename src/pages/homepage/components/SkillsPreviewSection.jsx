@@ -15,12 +15,12 @@ const SkillsPreviewSection = () => {
     },
     {
       title: 'DevOps',
-      skills: ['Docker', 'AWS', 'CI/CD', 'Nginx', 'Linux'],
+      skills: ['Docker', 'AWS', 'CI/CD', 'Linux'],
       icon: '🚀',
     },
     {
       title: 'Tools',
-      skills: ['Git', 'VS Code', 'Figma', 'Postman', 'Jest'],
+      skills: ['Git', 'VS Code', 'Figma', 'Postman'],
       icon: '🛠️',
     },
   ];

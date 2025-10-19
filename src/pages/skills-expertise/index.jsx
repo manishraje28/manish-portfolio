@@ -10,10 +10,10 @@ const SkillsExpertise = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
 
   const stats = [
-    { value: '20+', label: 'Technologies' },
-    { value: '5+', label: 'Years Exp.' },
-    { value: '100+', label: 'Projects' },
-    { value: '10+', label: 'Certifications' },
+    { value: '15+', label: 'Technologies' },
+    // { value: '5+', label: 'Years Exp.' },
+    { value: '15+', label: 'Projects' },
+    { value: '5+', label: 'Certifications' },
   ];
 
   const categories = ['all', 'frontend', 'backend', 'devops', 'tools'];
@@ -23,42 +23,42 @@ const SkillsExpertise = () => {
       name: 'React.js',
       icon: '⚛️',
       level: 95,
-      experience: '5+ years',
+      experience: '3+ years',
       category: 'frontend',
     },
     {
       name: 'Node.js',
       icon: '🟢',
       level: 90,
-      experience: '4+ years',
+      experience: '2+ years',
       category: 'backend',
     },
     {
       name: 'TypeScript',
       icon: '💙',
       level: 88,
-      experience: '3+ years',
+      experience: '2+ years',
       category: 'frontend',
     },
     {
       name: 'MongoDB',
       icon: '🍃',
       level: 85,
-      experience: '4+ years',
+      experience: '2+ years',
       category: 'backend',
     },
     {
       name: 'Docker',
       icon: '🐳',
       level: 82,
-      experience: '3+ years',
+      experience: '1+ years',
       category: 'devops',
     },
     {
       name: 'AWS',
       icon: '☁️',
       level: 80,
-      experience: '2+ years',
+      experience: '1+ years',
       category: 'devops',
     },
     {
@@ -72,7 +72,7 @@ const SkillsExpertise = () => {
       name: 'Git',
       icon: '🔧',
       level: 90,
-      experience: '5+ years',
+      experience: '4+ years',
       category: 'tools',
     },
   ];

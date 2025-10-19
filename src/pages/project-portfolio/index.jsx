@@ -10,8 +10,8 @@ const ProjectPortfolio = () => {
 
   const stats = [
     { value: '15+', label: 'Projects' },
-    { value: '4', label: 'Live Platforms' },
-    { value: '10k+', label: 'Users' },
+    { value: '3', label: 'Live Platforms' },
+    // { value: '10k+', label: 'Users' },
     { value: '100%', label: 'Learning' },
   ];
 
@@ -49,9 +49,9 @@ const ProjectPortfolio = () => {
     {
       title: 'Edugrade Portal',
       description: 'Worked on website development using React.js and Express.js. Contributed to development and enhancement of the educational portal.',
-      tech: ['React', 'Express', 'Node.js'],
+      tech: ['HTML', 'Javascript', 'ASP.Net'],
       status: 'live',
-      demo: '#',
+      demo: 'https://www.edgrade.com/',
       github: '#',
       period: 'June 2022 - July 2022',
       type: 'Web Development'
@@ -59,29 +59,29 @@ const ProjectPortfolio = () => {
     {
       title: 'PropertyThane Portal',
       description: 'Worked on various web portals contributing to their development and enhancement using modern web technologies.',
-      tech: ['React', 'Node.js', 'Express'],
+      tech: ['HTML', 'CSS', 'JavaScript', 'ASP.NET'],
       status: 'live',
-      demo: '#',
+      demo: 'https://www.propertythane.com/',
       github: '#',
       period: 'June 2022 - July 2022',
       type: 'Web Development'
     },
-    {
-      title: 'CARZBOT Portal',
-      description: 'Contributed to development and enhancement of CARZBOT web portal using React.js and Express.js.',
-      tech: ['React', 'Express', 'Node.js'],
-      status: 'live',
-      demo: '#',
-      github: '#',
-      period: 'June 2022 - July 2022',
-      type: 'Web Development'
-    },
+    // {
+    //   title: 'CARZBOT Portal',
+    //   description: 'Contributed to development and enhancement of CARZBOT web portal using React.js and Express.js.',
+    //   tech: ['React', 'Express', 'Node.js'],
+    //   status: 'live',
+    //   demo: '#',
+    //   github: '#',
+    //   period: 'June 2022 - July 2022',
+    //   type: 'Web Development'
+    // },
     {
       title: 'ThaneWeb Portal',
       description: 'Worked on ThaneWeb portal development and enhancement using React.js and Express.js.',
-      tech: ['React', 'Express', 'Node.js'],
+      tech: ['HTML', 'CSS', 'JavaScript'],
       status: 'live',
-      demo: '#',
+      demo: 'https://www.thaneweb.com/thane-city/index.html',
       github: '#',
       period: 'June 2022 - July 2022',
       type: 'Web Development'
@@ -102,7 +102,7 @@ const ProjectPortfolio = () => {
       tech: ['Java', 'MySQL', 'Swing'],
       status: 'completed',
       demo: '#',
-      github: '#',
+      github: 'https://github.com/manishraje28/Railway-Management-System',
       period: '2022',
       type: 'Desktop Application'
     },

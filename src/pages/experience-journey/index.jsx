@@ -8,48 +8,58 @@ import SkillProgressChart from './components/SkillProgressChart';
 
 const ExperienceJourney = () => {
   const stats = [
-    { value: '5+', label: 'Years' },
-    { value: '50+', label: 'Projects' },
-    { value: '20+', label: 'Clients' },
-    { value: '10+', label: 'Certifications' },
+    { value: '3+', label: 'Years Experience' },
+    { value: '15+', label: 'Projects' },
+    { value: '4', label: 'Live Portals' },
+    { value: '5+', label: 'Technologies' },
   ];
 
   const experiences = [
     {
-      title: 'Senior Full Stack Developer',
-      company: 'Tech Corp',
-      period: '2023 - Present',
-      description: 'Leading development of cloud-native applications and mentoring junior developers.',
+      title: 'Junior Web Tech Officer',
+      company: 'CSI VESIT',
+      period: '2024 – 2025',
+      location: 'Mumbai, India',
+      type: 'Leadership Role',
+      description: 'Leading technical initiatives and managing web development projects for the Computer Society of India student chapter at VESIT. Organizing informational events and workshops for students.',
       achievements: [
-        'Architected microservices infrastructure serving 1M+ users',
-        'Reduced API response time by 60%',
-        'Led team of 5 developers',
+        'Conducted and organized informational events and workshops for students',
+        'Worked on website development using React.js and Express.js',
+        'Assisted in managing technical content and student engagement activities',
+        'Contributed to technical events and student mentoring initiatives',
       ],
+      skills: ['React.js', 'Express.js', 'Event Management', 'Technical Leadership']
     },
     {
-      title: 'Full Stack Developer',
-      company: 'StartupXYZ',
-      period: '2021 - 2023',
-      description: 'Built and maintained multiple web applications.',
+      title: 'Web Development Intern',
+      company: 'Digikraf, Thane',
+      period: 'June 2022 – July 2022',
+      location: 'Thane, India',
+      type: 'Internship',
+      description: 'Worked on various web portals including Edugrade, PropertyThane, CARZBOT and ThaneWeb, contributing to their development and enhancement.',
       achievements: [
-        'Developed core platform features',
-        'Implemented real-time chat system',
-        'Optimized database queries',
+        'Worked on various web portals including Edugrade, PropertyThane, CARZBOT and ThaneWeb',
+        'Contributing to their development and enhancement',
+        'Developed features using React.js and Express.js',
+        'Collaborated with team members on multiple projects simultaneously',
       ],
+      skills: ['React.js', 'Express.js', 'Node.js', 'Web Development', 'Team Collaboration']
     },
   ];
 
   const certifications = [
-    { name: 'AWS Certified Developer', issuer: 'Amazon Web Services', year: '2023' },
-    { name: 'React Advanced Certification', issuer: 'Meta', year: '2022' },
-    { name: 'Node.js Certification', issuer: 'OpenJS Foundation', year: '2021' },
+    { name: 'Full-Stack Development', issuer: 'Self-Taught', year: '2023' },
+    { name: 'MERN Stack', issuer: 'Online Courses', year: '2023' },
+    { name: 'Database Management', issuer: 'Academic', year: '2022' },
   ];
 
   const skills = [
-    { name: 'React/Next.js', level: 95 },
-    { name: 'Node.js/Express', level: 90 },
-    { name: 'TypeScript', level: 88 },
-    { name: 'AWS/Cloud', level: 85 },
+    { name: 'React.js', level: 90 },
+    { name: 'Node.js/Express', level: 85 },
+    { name: 'MongoDB', level: 80 },
+    { name: 'JavaScript', level: 88 },
+    { name: 'Java', level: 75 },
+    { name: 'SQL/MySQL', level: 82 },
   ];
 
   return (
