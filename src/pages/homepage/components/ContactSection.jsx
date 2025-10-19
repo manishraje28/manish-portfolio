@@ -32,7 +32,7 @@ const ContactSection = () => {
           'Accept': 'application/json'
         },
         body: JSON.stringify({
-          access_key: 'YOUR_WEB3FORMS_ACCESS_KEY', // You need to get this from web3forms.com
+          access_key: process.env.REACT_APP_WEB3FORMS_ACCESS_KEY || 'YOUR_WEB3FORMS_ACCESS_KEY',
           name: formData.name,
           email: formData.email,
           message: formData.message,
@@ -53,6 +53,7 @@ const ContactSection = () => {
         }, 5000);
       } else {
         setStatus('error');
+        console.error('Web3Forms error:', result);
         setTimeout(() => {
           setStatus('');
         }, 5000);
