@@ -102,7 +102,7 @@ const HeroSection = () => {
                   </p>
                   <p className="flex items-center gap-2">
                     <span className="text-terminal-success">→</span>
-                    <span>MongoDB, PostgreSQL, Redis</span>
+                    <span>MongoDB, PostgreSQL, MySQL, Firebase</span>
                   </p>
                 </div>
               </motion.div>

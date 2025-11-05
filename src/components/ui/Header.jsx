@@ -12,7 +12,7 @@ const Header = () => {
     { path: '/skills', label: 'skills' },
     { path: '/experience', label: 'experience' },
     { path: '/education', label: 'education' },
-    { path: '/certifications', label: 'certifications' },
+    // { path: '/certifications', label: 'certifications' },
     { path: '/#contact', label: 'contact' },
   ];
 

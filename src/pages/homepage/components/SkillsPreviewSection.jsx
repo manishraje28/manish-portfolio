@@ -10,7 +10,7 @@ const SkillsPreviewSection = () => {
     },
     {
       title: 'Backend',
-      skills: ['Node.js', 'Express', 'PostgreSQL', 'MongoDB', 'Redis'],
+      skills: ['Node.js', 'Express', 'PostgreSQL', 'MongoDB', 'Firebase'],
       icon: '⚙️',
     },
     {

@@ -4,37 +4,34 @@ import { motion } from 'framer-motion';
 const ExperienceTimelineSection = () => {
   const experiences = [
     {
-      year: '2023 - Present',
-      title: 'Senior Full Stack Developer',
-      company: 'Tech Corp',
-      description: 'Leading development of cloud-native applications and mentoring junior developers.',
+      title: 'Junior Web Tech Officer',
+      company: 'CSI VESIT',
+      period: '2024 – 2025',
+      location: 'Mumbai, India',
+      type: 'Leadership Role',
+      description: 'Leading technical initiatives and managing web development projects for the Computer Society of India student chapter at VESIT. Organizing informational events and workshops for students.',
       achievements: [
-        'Architected microservices infrastructure',
-        'Reduced API response time by 60%',
-        'Led team of 5 developers',
+        'Conducted and organized informational events and workshops for students',
+        'Worked on website development using React.js and Express.js',
+        'Assisted in managing technical content and student engagement activities',
+        'Contributed to technical events and student mentoring initiatives',
       ],
+      skills: ['React.js', 'Express.js', 'Event Management', 'Technical Leadership']
     },
     {
-      year: '2021 - 2023',
-      title: 'Full Stack Developer',
-      company: 'StartupXYZ',
-      description: 'Built and maintained multiple web applications serving 100k+ users.',
+      title: 'Web Development Intern',
+      company: 'Digikraf, Thane',
+      period: 'June 2022 – July 2022',
+      location: 'Thane, India',
+      type: 'Internship',
+      description: 'Worked on various web portals including Edugrade, PropertyThane, CARZBOT and ThaneWeb, contributing to their development and enhancement.',
       achievements: [
-        'Developed core platform features',
-        'Implemented real-time chat system',
-        'Optimized database queries',
+        'Worked on various web portals including Edugrade, PropertyThane, CARZBOT and ThaneWeb',
+        'Contributing to their development and enhancement',
+        'Developed features using React.js and Express.js',
+        'Collaborated with team members on multiple projects simultaneously',
       ],
-    },
-    {
-      year: '2019 - 2021',
-      title: 'Frontend Developer',
-      company: 'Digital Agency',
-      description: 'Created responsive and interactive user interfaces for various clients.',
-      achievements: [
-        'Delivered 20+ client projects',
-        'Improved page load speed by 40%',
-        'Established component library',
-      ],
+      skills: ['React.js', 'Express.js', 'Node.js', 'Web Development', 'Team Collaboration']
     },
   ];
 
