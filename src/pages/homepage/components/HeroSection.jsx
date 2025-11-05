@@ -7,6 +7,15 @@ const HeroSection = () => {
   const fullText = "Hello, I'm Manish";
   const [showCursor, setShowCursor] = useState(true);
 
+  const downloadResume = () => {
+    const link = document.createElement('a');
+    link.href = '/Manish Raje Resume.pdf';
+    link.download = 'Manish_Raje_Resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   useEffect(() => {
     let index = 0;
     const typingInterval = setInterval(() => {
@@ -114,8 +123,8 @@ const HeroSection = () => {
                 transition={{ delay: 3 }}
                 className="flex flex-wrap gap-4"
               >
-                <Button variant="primary" size="lg" onClick={() => window.location.href = '#projects'}>
-                  $ view_projects
+                <Button variant="accent" size="lg" onClick={() => downloadResume()}>
+                  $ Download my Resume
                 </Button>
                 <Button variant="accent" size="lg" onClick={() => window.location.href = '#contact'}>
                   $ get_in_touch
