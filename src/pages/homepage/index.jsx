@@ -70,7 +70,9 @@ const Homepage = () => {
           </div>
         </div>
       </footer>
+      
     </div>
+    
   );
 };
 
