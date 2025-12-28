@@ -1,78 +1,55 @@
 import React from 'react';
 import Header from '../../components/ui/Header';
 import HeroSection from './components/HeroSection';
-import AboutSection from './components/AboutSection';
-import SkillsPreviewSection from './components/SkillsPreviewSection';
 import FeaturedProjectsSection from './components/FeaturedProjectsSection';
-import ExperienceTimelineSection from './components/ExperienceTimelineSection';
-import EducationTimelineSection from './components/EducationTimelineSection';
-import ContactSection from './components/ContactSection';
+import ExperienceSection from './components/ExperienceSection';
 
 const Homepage = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-bg-primary text-text-primary selection:bg-accent-primary/20 selection:text-white">
       <Header />
       <main>
         <HeroSection />
-        <AboutSection />
-        <SkillsPreviewSection />
         <FeaturedProjectsSection />
-        <ExperienceTimelineSection />
-        <EducationTimelineSection />
-        <ContactSection />
-      </main>
-      
-      {/* Footer */}
-      <footer className="border-t border-terminal-text-muted/20 py-8 md:py-12 bg-terminal-bg-secondary/50 backdrop-blur-sm">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 mb-6 md:mb-8">
-            {/* Brand */}
-            <div>
-              <h3 className="text-xl font-bold text-gradient-blue mb-3">$ manish.dev</h3>
-              <p className="text-terminal-text-muted text-sm leading-relaxed">
-                Building exceptional digital experiences with modern web technologies.
+        <ExperienceSection />
+
+        {/* Simple About / Contact Section */}
+        <section id="about" className="py-24 bg-bg-secondary/30">
+          <div className="container-custom max-w-4xl text-center">
+            <h2 className="text-3xl font-bold mb-8">About Me</h2>
+            <p className="text-xl text-text-secondary leading-relaxed mb-12">
+              I'm a passionate developer with a knack for building robust applications.
+              My journey involves exploring various technologies from desktop development with Java/C#
+              to modern web stacks with React and Node.js. I'm always eager to learn and create.
+            </p>
+
+            <div id="contact" className="p-8 bg-bg-secondary border border-white/5 rounded-2xl">
+              <h3 className="text-2xl font-bold mb-4">Let's Connect</h3>
+              <p className="text-text-secondary mb-8">
+                Interested in working together or just want to say hi?
               </p>
-            </div>
-            
-            {/* Quick Links */}
-            <div>
-              <h4 className="text-terminal-text-bright font-semibold mb-3">Quick Links</h4>
-              <ul className="space-y-2">
-                <li><a href="#about" className="text-terminal-text-muted hover:text-terminal-accent transition-colors text-sm">About</a></li>
-                <li><a href="#skills" className="text-terminal-text-muted hover:text-terminal-accent transition-colors text-sm">Skills</a></li>
-                <li><a href="#projects" className="text-terminal-text-muted hover:text-terminal-accent transition-colors text-sm">Projects</a></li>
-                <li><a href="#experience" className="text-terminal-text-muted hover:text-terminal-accent transition-colors text-sm">Experience</a></li>
-                <li><a href="#education" className="text-terminal-text-muted hover:text-terminal-accent transition-colors text-sm">Education</a></li>
-                <li><a href="#contact" className="text-terminal-text-muted hover:text-terminal-accent transition-colors text-sm">Contact</a></li>
-              </ul>
-            </div>
-            
-            {/* Tech Stack */}
-            <div>
-              <h4 className="text-terminal-text-bright font-semibold mb-3">Built With</h4>
-              <div className="flex flex-wrap gap-2">
-                {['React', 'Tailwind CSS', 'Framer Motion'].map((tech, i) => (
-                  <span key={i} className="text-xs px-3 py-1 bg-terminal-text/5 border border-terminal-text-muted/20 text-terminal-text-muted rounded-full">
-                    {tech}
-                  </span>
-                ))}
+              <a
+                href="mailto:contact@manish.dev"
+                className="text-accent-primary text-lg font-medium hover:underline underline-offset-4"
+              >
+                manishraje28@gmail.com
+              </a>
+              <div className="flex justify-center gap-6 mt-8">
+                <a href="https://github.com/manishraje28" target="_blank" rel="noopener noreferrer" className="text-text-muted hover:text-text-primary transition-colors">GitHub</a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-text-muted hover:text-text-primary transition-colors">LinkedIn</a>
+                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-text-muted hover:text-text-primary transition-colors">Twitter</a>
               </div>
             </div>
           </div>
-          
-          <div className="pt-8 border-t border-terminal-text-muted/10 text-center">
-            <p className="text-terminal-text-muted font-mono text-sm">
-              © 2025 Manish. Crafted with 💙 and ☕
-            </p>
-            <p className="text-terminal-text-muted/60 font-mono text-xs mt-2">
-              $ echo "Thanks for visiting!"
-            </p>
-          </div>
+        </section>
+      </main>
+
+      <footer className="py-8 border-t border-white/5 text-center text-text-muted text-sm">
+        <div className="container-custom">
+          <p>© {new Date().getFullYear()} Manish Raje. All rights reserved.</p>
         </div>
       </footer>
-      
     </div>
-    
   );
 };
 

@@ -17,6 +17,46 @@ const ProjectPortfolio = () => {
 
   const projects = [
     {
+      title: 'PragnaPath',
+      description: 'Cognitive-Adaptive Multi-Agent Learning Companion. An advanced AI-driven platform for personalized learning experiences.',
+      tech: ['Python', 'JavaScript', 'Multi-Agent Systems'],
+      status: 'completed',
+      demo: '#',
+      github: 'https://github.com/manishraje28/PragnaPath',
+      period: '2024',
+      type: 'AI/ML'
+    },
+    {
+      title: 'Secret-Santa',
+      description: 'A robust Secret Santa application featuring backend logic and Supabase integration for seamless user experience.',
+      tech: ['TypeScript', 'React', 'Supabase', 'PLpgSQL'],
+      status: 'completed',
+      demo: '#',
+      github: 'https://github.com/manishraje28/Secret-Santa',
+      period: '2024',
+      type: 'Full-Stack'
+    },
+    {
+      title: 'MoodMap',
+      description: 'A mood tracking application designed to help users monitor and analyze their emotional well-being over time.',
+      tech: ['TypeScript', 'CSS', 'React'],
+      status: 'completed',
+      demo: '#',
+      github: 'https://github.com/manishraje28/MoodMap',
+      period: '2024',
+      type: 'Web Application'
+    },
+    {
+      title: 'Meeting Assistant',
+      description: 'An intelligent meeting assistant leveraging Phi models to provide real-time support and analysis.',
+      tech: ['JavaScript', 'Python', 'AI/ML'],
+      status: 'completed',
+      demo: '#',
+      github: 'https://github.com/manishraje28/meeting-assistant',
+      period: '2024',
+      type: 'AI/ML'
+    },
+    {
       title: 'VPM-X (University Dashboard Management)',
       description: 'Designed and developed a University Dashboard Management System leveraging React, Node.js, Express, and MongoDB. Features academic monitoring, resource sharing, project collaboration, built-in code compiler, and quiz module. Integrated Telegram bot for notifications.',
       tech: ['React', 'Node.js', 'Express', 'MongoDB', 'Telegram Bot'],
@@ -179,8 +219,8 @@ const ProjectPortfolio = () => {
   const filteredProjects = selectedTech.length === 0
     ? projects
     : projects.filter(project =>
-        selectedTech.some(tech => project.tech.includes(tech))
-      );
+      selectedTech.some(tech => project.tech.includes(tech))
+    );
 
   return (
     <div className="min-h-screen">

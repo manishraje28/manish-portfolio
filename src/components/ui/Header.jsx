@@ -1,106 +1,83 @@
-import React from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Header = () => {
-  const location = useLocation();
-  const navigate = useNavigate();
+  const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const navItems = [
-    { path: '/', label: 'home' },
-    { path: '/projects', label: 'projects' },
-    { path: '/skills', label: 'skills' },
-    { path: '/experience', label: 'experience' },
-    { path: '/education', label: 'education' },
-    // { path: '/certifications', label: 'certifications' },
-    { path: '/#contact', label: 'contact' },
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const navLinks = [
+    { name: 'Projects', href: '#projects' },
+    { name: 'Experience', href: '#experience' },
+    { name: 'About', href: '#about' },
+    { name: 'Contact', href: '#contact' },
   ];
 
-  const handleClick = (e, path) => {
-    if (path.startsWith('/#')) {
-      e.preventDefault();
-      const id = path.substring(2);
-      
-      // If we're not on the homepage, navigate there first
-      if (location.pathname !== '/') {
-        navigate('/');
-        // Wait for navigation to complete, then scroll
-        setTimeout(() => {
-          const element = document.getElementById(id);
-          if (element) {
-            const headerOffset = 80;
-            const elementPosition = element.getBoundingClientRect().top;
-            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-            window.scrollTo({
-              top: offsetPosition,
-              behavior: 'smooth'
-            });
-          }
-        }, 300);
-      } else {
-        // Already on homepage, just scroll
-        const element = document.getElementById(id);
-        if (element) {
-          const headerOffset = 80;
-          const elementPosition = element.getBoundingClientRect().top;
-          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-          window.scrollTo({
-            top: offsetPosition,
-            behavior: 'smooth'
-          });
-        }
-      }
-    }
-  };
-
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-terminal-bg/95 backdrop-blur-md border-b border-terminal-text-muted/20 shadow-lg">
-      <nav className="container mx-auto px-4 sm:px-6 py-3 md:py-4">
-        <div className="flex items-center justify-between">
-          {/* Logo */}
-          <Link to="/" className="text-base sm:text-lg md:text-xl font-bold text-gradient-blue hover:scale-105 transition-transform">
-            <span className="font-mono">$ manish.dev</span>
-          </Link>
+    <header
+      className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-bg-primary/80 backdrop-blur-md border-b border-white/5 py-4' : 'bg-transparent py-6'
+        }`}
+    >
+      <div className="container-custom flex justify-between items-center">
+        <a href="/" className="text-xl font-bold tracking-tight text-text-primary hover:text-accent-primary transition-colors">
+          Manish<span className="text-accent-primary">.dev</span>
+        </a>
 
-          {/* Navigation */}
-          <ul className="hidden md:flex items-center gap-4 lg:gap-8">
-            {navItems.map((item) => (
-              <li key={item.path}>
-                <Link
-                  to={item.path}
-                  onClick={(e) => handleClick(e, item.path)}
-                  className={`
-                    relative py-2 font-mono text-sm transition-all duration-300
-                    ${location.pathname === item.path 
-                      ? 'text-terminal-text font-semibold' 
-                      : 'text-terminal-text-muted hover:text-terminal-text-bright'
-                    }
-                  `}
-                >
-                  <span>$ {item.label}</span>
-                  {location.pathname === item.path && (
-                    <motion.div
-                      layoutId="activeNav"
-                      className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-terminal-text via-terminal-accent to-terminal-purple rounded-full"
-                      initial={false}
-                      transition={{ type: 'spring', stiffness: 380, damping: 30 }}
-                    />
-                  )}
-                </Link>
-              </li>
-            ))}
-          </ul>
+        {/* Desktop Nav */}
+        <nav className="hidden md:flex gap-8">
+          {navLinks.map((link) => (
+            <a
+              key={link.name}
+              href={link.href}
+              className="text-sm font-medium text-text-secondary hover:text-text-primary transition-colors"
+            >
+              {link.name}
+            </a>
+          ))}
+        </nav>
 
-          {/* Mobile menu button */}
-          <button className="md:hidden text-terminal-text-bright hover:text-terminal-accent transition-colors">
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          </button>
-        </div>
-      </nav>
+        {/* Mobile Menu Button */}
+        <button
+          className="md:hidden text-text-primary p-2"
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+        >
+          <div className="space-y-1.5">
+            <span className={`block w-6 h-0.5 bg-current transition-transform ${mobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`} />
+            <span className={`block w-6 h-0.5 bg-current transition-opacity ${mobileMenuOpen ? 'opacity-0' : ''}`} />
+            <span className={`block w-6 h-0.5 bg-current transition-transform ${mobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
+          </div>
+        </button>
+
+        {/* Mobile Nav */}
+        <AnimatePresence>
+          {mobileMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              className="absolute top-full left-0 w-full bg-bg-secondary border-b border-white/5 p-4 md:hidden"
+            >
+              <nav className="flex flex-col gap-4">
+                {navLinks.map((link) => (
+                  <a
+                    key={link.name}
+                    href={link.href}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="text-text-secondary hover:text-text-primary py-2 block"
+                  >
+                    {link.name}
+                  </a>
+                ))}
+              </nav>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
     </header>
   );
 };

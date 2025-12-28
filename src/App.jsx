@@ -9,7 +9,7 @@ function App() {
     <ErrorBoundary>
       <BrowserRouter>
         <ScrollToTop />
-        <div className="min-h-screen bg-terminal-bg text-terminal-text font-mono">
+        <div className="min-h-screen">
           <Routes />
         </div>
       </BrowserRouter>
