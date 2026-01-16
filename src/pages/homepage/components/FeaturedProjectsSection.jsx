@@ -1,16 +1,18 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { projects } from '../../../data/projects';
+import { TiltCard, WaveDivider } from '../../../components/3d';
 
 const ProjectCard = ({ project, index }) => {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ delay: index * 0.1 }}
-      className="group relative bg-bg-secondary border border-white/5 rounded-2xl overflow-hidden hover:border-accent-primary/20 transition-all duration-300"
-    >
+    <TiltCard tiltAmount={8} glareOpacity={0.1} className="h-full">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: index * 0.1 }}
+        className="group relative bg-bg-secondary border border-white/5 rounded-2xl overflow-hidden hover:border-accent-primary/20 transition-all duration-300 h-full"
+      >
       <div className="p-8 h-full flex flex-col">
         <div className="flex justify-between items-start mb-6">
           <div className="bg-bg-tertiary px-3 py-1 rounded-full text-xs font-mono text-text-secondary border border-white/5">
@@ -59,6 +61,7 @@ const ProjectCard = ({ project, index }) => {
         </div>
       </div>
     </motion.div>
+    </TiltCard>
   );
 };
 
@@ -68,6 +71,11 @@ const FeaturedProjectsSection = () => {
 
   return (
     <section id="projects" className="py-24 bg-bg-primary relative">
+      {/* 3D Wave Divider at top */}
+      <div className="absolute top-0 left-0 right-0 -translate-y-1/2 opacity-30">
+        <WaveDivider height={150} color="#6366f1" />
+      </div>
+      
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
