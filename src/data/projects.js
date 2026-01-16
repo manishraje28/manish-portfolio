@@ -23,6 +23,17 @@ export const projects = [
         featured: true
     },
     {
+        title: 'AlumNet',
+        description: 'AlumNet — Student Mentorship & Opportunity Portal connecting students with alumni for mentorship, opportunities, and automated scheduling with real-time messaging.',
+        tech: ['React', 'Node.js', 'Postgres', 'Socket.io', 'Google Calendar API'],
+        status: 'completed',
+        demo: 'https://alumnet-xi.vercel.app/',
+        github: 'https://github.com/manishraje28/AlumNet',
+        period: '2024',
+        type: 'Full-Stack',
+        featured: true
+    },
+    {
         title: 'Secret-Santa',
         description: 'A robust Secret Santa application featuring backend logic and Supabase integration for seamless user experience.',
         tech: ['TypeScript', 'React', 'Supabase', 'PLpgSQL'],
